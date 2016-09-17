@@ -77,3 +77,11 @@ and changing how the inputstream is created :
    InputStream is = new ByteArrayInputStream(randomWord(10).getBytes(StandardCharsets.UTF_8));
 #+END_SRC
 that way reading the bytes direct from the string and not a file
+
+
+** exercise 7 execution time
+   at this execise we can see the diference in execution time compared to the script made on the exercise 4
+   the java version of the program has a noticeable faster.
+   that is because the script version stays opening and closing each file descriptor for each file what is a expensive operation
+   but on the java version it keeps the file descriptor opened on the hadoop side until all files are concatenated into this one.
+   what reliefs the cost of the operation.
