@@ -1,0 +1,126 @@
+% Created 2016-09-17 Sat 13:31
+\documentclass[a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{capt-of}
+\usepackage[hyperref,x11names]{xcolor}
+\usepackage[colorlinks=true,urlcolor=SteelBlue4,linkcolor=Firebrick4]{hyperref}
+
+% --------------INTEGRATION CODE JAVA----------
+\usepackage{listings}
+\lstset{
+language=Java,
+basicstyle=\normalsize, % ou ça==> basicstyle=\scriptsize,
+upquote=true,
+aboveskip={1.5\baselineskip},
+columns=fullflexible,
+showstringspaces=false,
+extendedchars=true,
+breaklines=true,
+showtabs=false,
+showspaces=false,
+showstringspaces=false,
+identifierstyle=\ttfamily,
+keywordstyle=\color[rgb]{0,0,1},
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+\author{Guitard Alan \and Willian Ver Valen Paiva }
+\date{\today}
+\title{Premier pas avec Hadoop MapReduce}
+\hypersetup{
+ pdfauthor={Guitard Alan},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.1.50.1 (Org mode 8.3.5)}, 
+ pdflang={French}}
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+	
+Ces exercices avaient pour objectif de nous apprendre les bases de la programmation \_à grande échelle en nous soumettant des exercices
+de parsing basique sur une fichier massif, exercices dont les programmes-solutions prendrait énormément de temps et de mémoire CPU 
+à faire sur une seule machine, tandis qu'ils ne prendraient que quelques secondes sur un cluster. 
+
+\section{Exercice 1: Filtrage}
+
+L'objectif de cet exercice est de programmer un mapper et un reducer pour lire le fichier massif worldcitiespop.txt de taille 144MB, une liste de ville, leur population et d'autres informations, qui est structuré comme suit:
+\begin{itemize}
+\item une première ligne décrivant le contenu des lignes, dont les champs sont séparés par des virgules
+\item Les champs de chaque villes structurés comme décrit dans la première ligne.
+\end{itemize}
+
+et d'écrire seulement les villes qui ont un champ de population valide dans un fichier output.txt. 
+
+\subsection{Le Mapper}
+Le mapper se charge de lire et de filtrer les bonnes villes. Cela tient en quelques lignes:
+\begin{lstlisting}
+String[] line = value.toString().split(",");
+if(!line[4].equals(""))
+{
+    context.write(value, new IntWritable(1) );
+}
+\end{lstlisting}
+
+La variable \verb?value? est un paramètre qui est un objet \verb?Text? contenant une ligne du fichier. Cette fonction est donc appelé une fois par ligne. La variable \verb?value? est séparé en un tableau en fonction des virgules et la case numéro 4 est testée. Si elle est vide, la ville ne contient pas d'informations de population et n'est donc pas écrite. 
+
+\subsection{Le Reducer}
+Le reducer se limite à ces deux lignes:
+\begin{lstlisting}
+for(IntWritable value : values)
+	context.write(key, null );
+\end{lstlisting}
+
+Cela a pour effet d'écrire dans le fichier les lignes renvoyés par le mapper.
+
+\section{Exercice 2: Compteurs}
+
+Pour cet exercice, nous allons reprendre le code écrit pour l'exercice 1.
+Le but de celui-ci est d'utiliser la fonction \verb?getCompteur(String,String)? pour compter trois valeurs: \verb?nb_cities?, 
+qui est le nombre de villes valide, \verb?nb_pop?, le nombre de villes avec une population renseignée
+et \verb?total_pop? qui est le nombre d'habitants de toutes les villes.
+ Ces compteurs doit être réunis dans un groupe que l'on nommera "WCP".
+
+\subsection{Le Mapper}
+
+La difficulté ici était d'apprendre à se servir des compteurs. La chose à comprendre était que les compteurs sont instanciés dans la fonction \\ \verb?getCompteur(String namegroup,String namecompteur)? si ses paramètres ne sont pas connus du contexte. Voici l'utilisation que nous en avons fait:
+\begin{lstlisting}
+ String[] line = value.toString().split(",");
+ if(!line[4].equals("Population"))
+{
+     if(!line[4].equals(""))
+	 {
+	     context.write(value, new IntWritable(1) );
+	     context.getCounter("WCP","total_pop").increment(Integer.parseInt(line[4]));
+	     context.getCounter("WCP","nb_pop").increment(1);
+	 }
+     context.getCounter("WCP","nb_cities").increment(1); 
+}
+\end{lstlisting}
+
+Nous appelons donc les compteurs au bon endroit en fonction de ce que l'on veut compter. Le premier paramètre est le nom du groupe, "WCP". Comme ce groupe n'est pas connu par le contexte, il est créé. Le deuxième paramètre est le nom du compteur et également, comme il n'est pas connu, il est créé. 
+
+Pour afficher leur valeur à la fin du programme, rien n'est besoin de coder, yarn l'affiche automatiquement à la fin du programme.
+
+
+\end{document}
