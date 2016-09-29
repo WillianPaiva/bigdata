@@ -17,9 +17,24 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class TP3 {
+
     
     public static class TP3Mapper extends Mapper<Object, Text, Text, AvgMaxMinWritable>{
 
+	/******/
+	protected void setup(Context context)
+	{
+	    URI[] files = context.getCacheFiles(context.getConfiguration());
+	    DataInputStream strm = new DataInputStream(new FileInputStream(files[0].getPath());
+
+	//Un objet qui implémente Writable doit être créer
+	// mais je vois pas trop quoi mettre en données
+	// membre. Tu saura surement mieux que moi.
+							  
+	}
+
+	/********/
+	
 	public void map(Object key, Text value, Context context
 			) throws IOException, InterruptedException {
 	    
@@ -89,6 +104,9 @@ public class TP3 {
 	job.setOutputValueClass(AvgMaxMinWritable.class);
 	job.setOutputFormatClass(TextOutputFormat.class);
 	job.setInputFormatClass(TextInputFormat.class);
+	/***/
+	job.addCacheFile(new Path(args[2]).toUri());
+	/***/
 	FileInputFormat.addInputPath(job, new Path(args[0]));
 	FileOutputFormat.setOutputPath(job, new Path(args[1]));
 	System.exit(job.waitForCompletion(true) ? 0 : 1);
