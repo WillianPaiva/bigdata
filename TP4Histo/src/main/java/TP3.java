@@ -18,19 +18,51 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class TP3 {
 
+    public static class ConfCachFiles implements Writable
+    {
+	private static int steplog;
+
+	public ConfCachFiles()
+	{
+	    steplog = 10;
+	}
+
+	public int getStep()
+	{
+	    return steplog;
+	}
+
+	public void setStep(int value)
+	{
+	    this.steplog = value;
+	}
+	
+	@Override
+	public void write(DataOutput out) throws IOException
+	{
+	    steplog.write(out);
+	}
+
+	@Override
+	public void readFields(DataInput in) throws IOException
+	{
+	    steplog.readFields(in);
+	}
+
+    }
     
     public static class TP3Mapper extends Mapper<Object, Text, Text, AvgMaxMinWritable>{
-
+	
 	/******/
 	protected void setup(Context context)
 	{
 	    URI[] files = context.getCacheFiles(context.getConfiguration());
-	    DataInputStream strm = new DataInputStream(new FileInputStream(files[0].getPath());
+	    DataInputStream strm = new DataInputStream(new FileInputStream(files[0].getPath()));
 
-	//Un objet qui implémente Writable doit être créer
-	// mais je vois pas trop quoi mettre en données
-	// membre. Tu saura surement mieux que moi.
-							  
+	    ConfCachFiles cache = new ConfCachFiles();
+	    cache.readFields(strm);
+	    
+	    strm.close();
 	}
 
 	/********/
@@ -44,10 +76,13 @@ public class TP3 {
 		{
 		     if(!line[4].equals(""))
 			 {
-			     int log_pop = (int)Math.round(Math.log10(Double.parseDouble(line[4])));
+			     int num_pop = Double.parseDouble(line[4]);
+			     int base = Double.parseDouble(context.getConfiguration().getString("steplog","10"));
+			     int log_pop = (int)Math.round(Math.log(num_pop) / Math.log(base));
 			     int log_pop10 = (int)Math.pow(10,log_pop);
 			     Text result = new Text(log_pop10+"");
-			     context.write(result, new AvgMaxMinWritable(1,Integer.parseInt(line[4])));
+			     context.write(result,
+					   new AvgMaxMinWritable(1,(int)num_pop);
 			 }
 		}
 	}

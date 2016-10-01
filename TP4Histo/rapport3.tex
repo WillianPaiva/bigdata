@@ -63,7 +63,7 @@ stringstyle=\color[rgb]{0.627,0.126,0.941},
 
 \section{Exercice 1: Histogramme}
 
-L'objectif de cet exercice est de classer les villes que l'on as sélectionné dans des classes en fonction de leur population. L'idée est de les classer en fonction du logarithme en base 10 de leur population.\linebreak
+L'objectif de cet exercice est de classer les villes que l'on as sélectionné dans des classes en fonction de leur population. L'idée est de les classer en fonction du logarithme en base 10 de leur population.
 
 \subsection{Le Mapper}
 Pour que cela puisse fonctionner, il faut arrondir la valeur obtenue à l'unité la plus proche, et utiliser cette valeur en tant que puissance de 10, comme suit:
@@ -87,9 +87,9 @@ L'exercice est de résumer chaque classe par la population moyenne, maximum et m
 
 \subsection{Le Mapper}
 
-L'objet \verb?AvgMaxMinWritable? va remplacer l'objet \verb?IntWritable? qu'on passait à la fonction \ver?context.write? qui ne servait pas jusque là. Cet objet contient donc les données membres contenant la population, le compteur (qui remplace la variable \verb?sum? de l'exercice 1, et les variables avg, max, et min qui sera utilisé dans le reducer.
+L'objet \verb?AvgMaxMinWritable? va remplacer l'objet \verb?IntWritable? qu'on passait à la fonction \verb?context.write? qui ne servait pas jusque là. Cet objet contient donc les données membres contenant la population, le compteur (qui remplace la variable \verb?sum? de l'exercice 1, et les variables avg, max, et min qui sera utilisé dans le reducer.
 
-Ici, dans le mapper, seul la population est donnée à l'objet \verb?AvgMaxMinWritable? qu'on instance dans le même temps:
+Ici, dans le mapper, seul la population est donnée à l'objet \\ \verb?AvgMaxMinWritable? qu'on instance dans le même temps:
 \begin{lstlisting}
 context.write(result, new AvgMaxMinWritable(1,Integer.parseInt(line[4])));
 \end{lstlisting}
@@ -98,8 +98,48 @@ context.write(result, new AvgMaxMinWritable(1,Integer.parseInt(line[4])));
 
 Ici, on itère sur un objet \verb?values? qui contient maintenant des objets de type \verb?AvgMaxMinWritable?. Dans cette itération, on traite les données. Ce traitement est donc incrémenter le compteur avec la valeur dans \verb?value.getCounter()?, incrémenter avg avec \verb?value.getPop()?, et définir max ou min si la valeur dans \verb?value.getPop()? est plus grande ou plus petite, respectivement.
 
-A la fin de l'itération, ces valeurs sont écrit dans \verb?AvgMaxMinWritable result? (avg est divisé par le nombre de ville de la classe pour avoir la moyenne) et l'objet est alors écrit dans le contexte.
+A la fin de l'itération, ces valeurs sont écrit dans\\ \verb?AvgMaxMinWritable result;?, (avg est divisé par le nombre de ville de la classe pour avoir la moyenne) et l'objet est alors écrit dans le contexte.
 
 \section{Exercice 3: Paramétrage}
 
+Cet exercice nous propose de permettre d'ajouter un fichier de paramètre partagé entre les nœuds du cluster. En l'occurrence, nous allons permettre à l'utilisateur de changer la base du logarithme afin qu'il est un contrôle sur les classes construites.
+
+\subsection{Le Mapper}
+
+La fonction \verb?setup()? doit être écrite afin de récupérer le fichier cache que l'on as ajouté dans le job par la ligne:
+\begin{lstlisting}
+job.addCacheFile(new Path(args[2]).toUri());
+\end{lstlisting}
+
+Le chemin local du fichier xml que décrit les paramètres à intégrer est donc à envoyer en troisième paramètre dans la ligne de commande.
+
+\begin{lstlisting}
+	protected void setup(Context context)
+	{
+	    URI[] files = context.getCacheFiles(context.getConfiguration());
+	    DataInputStream strm = new DataInputStream(new FileInputStream(files[0].getPath()));
+
+	    ConfCachFiles cache = new ConfCachFiles();
+	    cache.readFields(strm);
+	    
+	    strm.close();
+	}
+\end{lstlisting} 
+
+La fonction ci-dessus est celle qui charge les données du fichier cache dans l'objet \verb?ConfCachFiles? créé pour l'occasion.
+On peut alors récupérer cette valeur dans le mapper par le contexte et la configuration:
+\begin{lstlisting}
+int steplog = context.getConfiguration().getString("steplog","10");
+\end{lstlisting}
+Cette ligne récupère la valeur steplog du fichier xml, ou renvoie 10 si cette valeur n'existe pas.
+
+Pour changer la base du logarithme, la formule est celle-ci:
+\begin{lstlisting}
+Math.log(num) / Math.log(base)
+\end{lstlisting}
+, où la base est donc la valeur que l'on as récupéré dans le fichier xml.
+
+\subsubsection{Le Reducer}
+
+Aucun changement n'as été fait dans le reducer.
 \end{document}
