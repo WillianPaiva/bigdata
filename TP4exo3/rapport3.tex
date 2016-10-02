@@ -1,0 +1,105 @@
+% Created 2016-09-17 Sat 13:31
+\documentclass[a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{capt-of}
+\usepackage[hyperref,x11names]{xcolor}
+\usepackage[colorlinks=true,urlcolor=SteelBlue4,linkcolor=Firebrick4]{hyperref}
+
+% --------------INTEGRATION CODE JAVA----------
+\usepackage{listings}
+\lstset{
+language=Java,
+basicstyle=\normalsize, % ou ça==> basicstyle=\scriptsize,
+upquote=true,
+aboveskip={1.5\baselineskip},
+columns=fullflexible,
+showstringspaces=false,
+extendedchars=true,
+breaklines=true,
+showtabs=false,
+showspaces=false,
+showstringspaces=false,
+identifierstyle=\ttfamily,
+keywordstyle=\color[rgb]{0,0,1},
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+\author{Guitard Alan \and Willian Ver Valen Paiva }
+\date{\today}
+\title{Premier pas avec Hadoop MapReduce: Deuxième partie}
+\hypersetup{
+ pdfauthor={Guitard Alan},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.1.50.1 (Org mode 8.3.5)}, 
+ pdflang={French}}
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+	
+	Ces exercices est une suite de l'ancien TP sur le mapping-reducing pour nous apprendre d'autres outils pour manier ce framework de MapReduce.
+	Nous partirons des anciens exercices qui consistait à filtrer les lignes du fichier qui décrit les villes, afin de ne pouvoir travailler que sur les villes valides.
+
+\section{Exercice 1: Histogramme}
+
+L'objectif de cet exercice est de classer les villes que l'on as sélectionné dans des classes en fonction de leur population. L'idée est de les classer en fonction du logarithme en base 10 de leur population.\linebreak
+
+\subsection{Le Mapper}
+Pour que cela puisse fonctionner, il faut arrondir la valeur obtenue à l'unité la plus proche, et utiliser cette valeur en tant que puissance de 10, comme suit:
+\begin{lstlisting}
+int log_pop = (int)Math.round(Math.log10(Double.parseDouble(line[4])));
+int log_pop10 = (int)Math.pow(10,log_pop);
+\end{lstlisting}
+
+Une première classe sera donc celle des villes dont la population va de 0 à 10, la deuxième de 10 à 100, et ainsi de suite. 
+
+Pour terminer, cette valeur traduite en objet \verb?Text? et envoyer dans le contexte par la fonction \verb?context.write(result, new IntWritable(1));?.
+
+\subsection{Le Reducer}
+Le Reducer pour cet exercice est simple, il est chargé d'incrémenter le nombre de ville pour chaque groupe.
+Nous itérons sur le paramètres values en les ajoutant à une variable \verb?sum?. Cette variable qui sera écrit dans le fichier de sortie.
+
+\section{Exercice 2: Résumé}
+
+L'exercice est de résumer chaque classe par la population moyenne, maximum et minimum des villes qui la constitue. Pour ceci, un objet implémentant l'interface \verb?Writable? doit être écrit, afin de pouvoir passer les valeurs à écrire dans le fichier en un seul objet.
+
+
+\subsection{Le Mapper}
+
+L'objet \verb?AvgMaxMinWritable? va remplacer l'objet \verb?IntWritable? qu'on passait à la fonction \ver?context.write? qui ne servait pas jusque là. Cet objet contient donc les données membres contenant la population, le compteur (qui remplace la variable \verb?sum? de l'exercice 1, et les variables avg, max, et min qui sera utilisé dans le reducer.
+
+Ici, dans le mapper, seul la population est donnée à l'objet \verb?AvgMaxMinWritable? qu'on instance dans le même temps:
+\begin{lstlisting}
+context.write(result, new AvgMaxMinWritable(1,Integer.parseInt(line[4])));
+\end{lstlisting}
+
+\subsection{Le Reducer}
+
+Ici, on itère sur un objet \verb?values? qui contient maintenant des objets de type \verb?AvgMaxMinWritable?. Dans cette itération, on traite les données. Ce traitement est donc incrémenter le compteur avec la valeur dans \verb?value.getCounter()?, incrémenter avg avec \verb?value.getPop()?, et définir max ou min si la valeur dans \verb?value.getPop()? est plus grande ou plus petite, respectivement.
+
+A la fin de l'itération, ces valeurs sont écrit dans \verb?AvgMaxMinWritable result? (avg est divisé par le nombre de ville de la classe pour avoir la moyenne) et l'objet est alors écrit dans le contexte.
+
+\section{Exercice 3: Paramétrage}
+
+\end{document}
