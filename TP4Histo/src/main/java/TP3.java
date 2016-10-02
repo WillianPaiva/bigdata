@@ -18,132 +18,80 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class TP3 {
 
-    public static class ConfCachFiles implements Writable
-    {
-	private static int steplog;
 
-	public ConfCachFiles()
-	{
-	    steplog = 10;
-	}
-
-	public int getStep()
-	{
-	    return steplog;
-	}
-
-	public void setStep(int value)
-	{
-	    this.steplog = value;
-	}
-	
-	@Override
-	public void write(DataOutput out) throws IOException
-	{
-	    steplog.write(out);
-	}
-
-	@Override
-	public void readFields(DataInput in) throws IOException
-	{
-	    steplog.readFields(in);
-	}
-
-    }
-    
     public static class TP3Mapper extends Mapper<Object, Text, Text, AvgMaxMinWritable>{
-	
-	/******/
-	protected void setup(Context context)
-	{
-	    URI[] files = context.getCacheFiles(context.getConfiguration());
-	    DataInputStream strm = new DataInputStream(new FileInputStream(files[0].getPath()));
 
-	    ConfCachFiles cache = new ConfCachFiles();
-	    cache.readFields(strm);
-	    
-	    strm.close();
-	}
+  public void map(Object key, Text value, Context context
+      ) throws IOException, InterruptedException {
 
-	/********/
-	
-	public void map(Object key, Text value, Context context
-			) throws IOException, InterruptedException {
-	    
-	    String[] line = value.toString().split(",");
-	    
-	    if(!line[4].equals("Population"))
-		{
-		     if(!line[4].equals(""))
-			 {
-			     int num_pop = Double.parseDouble(line[4]);
-			     int base = Double.parseDouble(context.getConfiguration().getString("steplog","10"));
-			     int log_pop = (int)Math.round(Math.log(num_pop) / Math.log(base));
-			     int log_pop10 = (int)Math.pow(10,log_pop);
-			     Text result = new Text(log_pop10+"");
-			     context.write(result,
-					   new AvgMaxMinWritable(1,(int)num_pop);
-			 }
-		}
-	}
+      String[] line = value.toString().split(",");
+
+      if(!line[4].equals("Population"))
+    {
+         if(!line[4].equals(""))
+       {
+           int log_pop = (int)Math.round(Math.log10(Double.parseDouble(line[4])));
+           int log_pop10 = (int)Math.pow(10,log_pop);
+           Text result = new Text(log_pop10+"");
+           context.write(result, new AvgMaxMinWritable(1,Integer.parseInt(line[4])));
+       }
     }
-    
+  }
+    }
+
     public static class TP3Reducer extends Reducer<Text,AvgMaxMinWritable,Text,AvgMaxMinWritable> {
 
-	private static AvgMaxMinWritable result = new AvgMaxMinWritable();
-	private boolean first = true;
-	public void reduce(Text key, Iterable<AvgMaxMinWritable> values,
-			   Context context
-			   ) throws IOException, InterruptedException {
-	    if(first)
-		{
-		    context.write(new Text("classe\t\tcount\t\tavg\t\tmax\t\tmin"),null);
-		    first = false;
-		}
-	    int sum = 0;
-	    int avg = 0;
-	    int max = 0;
-	    int min = 0;
-	    
-	    for(AvgMaxMinWritable value : values)
-		{
-		    sum += value.getCounter();
-		    avg += value.getPop();
+  private static AvgMaxMinWritable result = new AvgMaxMinWritable();
+  private boolean first = true;
+  public void reduce(Text key, Iterable<AvgMaxMinWritable> values,
+         Context context
+         ) throws IOException, InterruptedException {
+      if(first)
+    {
+        context.write(new Text("classe\t\tcount\t\tavg\t\tmax\t\tmin"),null);
+        first = false;
+    }
+      int sum = 0;
+      int avg = 0;
+      int max = 0;
+      int min = 0;
 
-		    if(max < value.getPop())
-			max = value.getPop();
+      for(AvgMaxMinWritable value : values)
+    {
+        sum += value.getCounter();
+        avg += value.getPop();
 
-		    if(min > value.getPop() || min == 0)
-			min = value.getPop();
-		}
+        if(max < value.getPop())
+      max = value.getPop();
 
-	    result.setCounter(sum);
-	    
-	    result.setAvg(avg/sum);
-	    result.setMax(max);
-	    result.setMin(min);
-	    
-	    context.write(key,result);
-	}
+        if(min > value.getPop() || min == 0)
+      min = value.getPop();
+    }
+
+      result.setCounter(sum);
+
+      result.setAvg(avg/sum);
+      result.setMax(max);
+      result.setMin(min);
+
+      context.write(key,result);
+  }
     }
     public static void main(String[] args) throws Exception {
-	Configuration conf = new Configuration();
-	Job job = Job.getInstance(conf, "TP3");
-	job.setNumReduceTasks(1);
-	job.setJarByClass(TP3.class);
-	job.setMapperClass(TP3Mapper.class);
-	job.setMapOutputKeyClass(Text.class);
-	job.setMapOutputValueClass(AvgMaxMinWritable.class);
-	job.setReducerClass(TP3Reducer.class);
-	job.setOutputKeyClass(Text.class);
-	job.setOutputValueClass(AvgMaxMinWritable.class);
-	job.setOutputFormatClass(TextOutputFormat.class);
-	job.setInputFormatClass(TextInputFormat.class);
-	/***/
-	job.addCacheFile(new Path(args[2]).toUri());
-	/***/
-	FileInputFormat.addInputPath(job, new Path(args[0]));
-	FileOutputFormat.setOutputPath(job, new Path(args[1]));
-	System.exit(job.waitForCompletion(true) ? 0 : 1);
+  Configuration conf = new Configuration();
+  Job job = Job.getInstance(conf, "TP3");
+  job.setNumReduceTasks(1);
+  job.setJarByClass(TP3.class);
+  job.setMapperClass(TP3Mapper.class);
+  job.setMapOutputKeyClass(Text.class);
+  job.setMapOutputValueClass(AvgMaxMinWritable.class);
+  job.setReducerClass(TP3Reducer.class);
+  job.setOutputKeyClass(Text.class);
+  job.setOutputValueClass(AvgMaxMinWritable.class);
+  job.setOutputFormatClass(TextOutputFormat.class);
+  job.setInputFormatClass(TextInputFormat.class);
+  FileInputFormat.addInputPath(job, new Path(args[0]));
+  FileOutputFormat.setOutputPath(job, new Path(args[1]));
+  System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
