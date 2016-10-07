@@ -11,7 +11,7 @@ public class AvgMaxMinWritable implements Writable
 	private IntWritable avg;
 	private IntWritable max;
 	private IntWritable min;
-
+	
 	/*************************************/
 	
 	public AvgMaxMinWritable()
@@ -31,6 +31,7 @@ public class AvgMaxMinWritable implements Writable
 	    max = new IntWritable(0);
 	    min = new IntWritable(0);
 
+	    
 	}
 
 	/**

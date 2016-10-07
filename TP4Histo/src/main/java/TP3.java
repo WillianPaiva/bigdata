@@ -21,6 +21,16 @@ public class TP3 {
 
     public static class TP3Mapper extends Mapper<Object, Text, Text, AvgMaxMinWritable>{
 
+
+	/******/
+	protected void setup(Context context)
+	{
+	    URI[] files = context.getCacheFiles(context.getConfiguration());
+	    DataInputStream strm = new DataInputStream(new FileInputStream(files[0].getPath()));
+	    
+						       
+	}
+
   public void map(Object key, Text value, Context context
       ) throws IOException, InterruptedException {
 
