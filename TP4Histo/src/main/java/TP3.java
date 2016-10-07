@@ -25,12 +25,9 @@ public class TP3 {
 	protected void setup(Context context)
 	{
 	    URI[] files = context.getCacheFiles(context.getConfiguration());
-	    DataInputStream strm = new DataInputStream(new FileInputStream(files[0].getPath());
-
-	//Un objet qui implémente Writable doit être créer
-	// mais je vois pas trop quoi mettre en données
-	// membre. Tu saura surement mieux que moi.
-							  
+	    DataInputStream strm = new DataInputStream(new FileInputStream(files[0].getPath()));
+	    
+						       
 	}
 
 	/********/
