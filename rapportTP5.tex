@@ -1,0 +1,163 @@
+% Created 2016-09-17 Sat 13:31
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage[hyperref,x11names]{xcolor}
+\usepackage[colorlinks=true,urlcolor=SteelBlue4,linkcolor=Firebrick4]{hyperref}
+% --------------INTEGRATION CODE JAVA----------
+\usepackage{listings}
+\lstset{
+language=Java,
+basicstyle=\normalsize, % ou ça==> basicstyle=\scriptsize,
+upquote=true,
+aboveskip={1.5\baselineskip},
+columns=fullflexible,
+showstringspaces=false,
+extendedchars=true,
+breaklines=true,
+showtabs=false,
+showspaces=false,
+showstringspaces=false,
+identifierstyle=\ttfamily,
+keywordstyle=\color[rgb]{0,0,1},
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+\author{Willian Ver Valen Paiva \and Alan Guitard}
+\date{\today}
+\title{Rapport TP2}
+\hypersetup{
+ pdfauthor={Willian Ver Valen Paiva Guitard Alan},
+ pdftitle={Création d'InputFormat personnalisé},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.1.50.1 (Org mode 8.3.5)}, 
+ pdflang={fr}
+ }
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+Le but de ce TP est d'écrire un \verb?InputFormat? personnalisé pour le framework Mapper/Reducer proposé par Hadoop.
+
+\paragraph{L'objet InputFormat}
+La documentation d'Hadoop nous renseigne sur cet objet en nous expliquant son utilisation:
+\begin{enumerate}
+\item Il valide la spécification d'entrée du job.
+\item Il sépare les fichiers d'entrée avec une logique qu'on aura créé par le biais des \verb?InputSplits? (Chaque "splits" sera traité par un mapper).
+\item Il propose l'implémentation d'un lecteur de fichier d'entrée destiné à être utilisé. Ce lecteur lit les fichiers dont les données ont été divisés en "splits" et les rend accessible au mapper.
+\end{enumerate}
+
+\section{Exercice 1: Point2DWritable}
+
+L'objectif de se t'aider est d'écrire un objet implémentant l'interface \verb?Writable? qui représentera un point décrit par des coordonnées X et Y, afin que les Mapper/Reducer puissent s'échanger cette objet. En effet, les objets lus ou écrit par ce job ont besoin d'implémenter les fonctions \newline  \verb?public void readFields(DataInout in) throws IOException? et \newline \verb?public void write(DataOutput out) throws IOException?.
+
+Pour coder le point en lui-même, l'objet \verb?Point2D.Double?.
+
+\section{Exercice 2: RandomPointInputFormat}
+Cet objet doit proposer deux méthodes, implémentant l'objet abstrait\newline  \verb?InputFormat<K,T>?. Après que les types génériques soient changés en\newline  \verb?IntWritable? pour le K et \verb?Point2DWritable? pour le T, ces méthode deviennent les suivantes:
+\begin{lstlisting}
+@Override
+	public RecordReader<IntWritable, Point2DWritable> createRecordReader(InputSplit arg0, TaskAttemptContext arg1)
+			throws IOException, InterruptedException {
+		return new RandomPointReader();
+	}
+\end{lstlisting}
+
+\begin{lstlisting}
+@Override
+	public List<InputSplit> getSplits(JobContext arg0) throws IOException, InterruptedException {
+        int splits = Integer.parseInt(arg0.getConfiguration().get("splits"));
+		List<InputSplit> list = new ArrayList<InputSplit>();
+		for(int i=0;i< splits;i++)
+			list.add(new FakeInputSplit());
+		return list;
+	}
+\end{lstlisting}
+
+\subsection{FakeInputSplit}
+Cette classe implémente l'interface \verb?InputSplit? et est une classe qui simulera un bloc de données. En effet, dans ce TP, nous n'allons pas lire les points en deux dimensions dans des fichiers mais ils seront générés directement par l'objet qui suit.
+
+\subsection{RandomPointReader}
+Une classe implémentant l'interface \verb?RecordReader? doit lire un à un, en itérant grâce à la fonction \verb?nextKeyValue()? pour changer de couple clé/valeur, et proposer de récupérer ce couple courant par des getters.
+Comme nous simulons la lecture des points en deux dimensions, \verb?nextKeyValue()? génère simplement un point aléatoire et donc le rend accessible par les getters.
+
+\section{Exercice 3: Test du RandomPointInputFormat}
+Pour tester ces implémentations, la configuration du job doit être changé dans la fonction main:
+\begin{lstlisting}
+ public static void main(String[] args) throws Exception {
+    Configuration conf = new Configuration();
+    conf.set("splits",args[1]);
+    conf.set("points",args[2]);
+    Job job = Job.getInstance(conf, "TP3");
+    job.setNumReduceTasks(1);
+    job.setJarByClass(TP3.class);
+    job.setMapperClass(TP3Mapper.class);
+    job.setMapOutputKeyClass(IntWritable.class);
+    job.setMapOutputValueClass(Point2DWritable.class);
+    job.setReducerClass(TP3Reducer.class);
+    job.setOutputKeyClass(IntWritable.class);
+    job.setOutputValueClass(Point2DWritable.class);
+    job.setOutputFormatClass(TextOutputFormat.class);
+    job.setInputFormatClass(RandomPointInputFormat.class);
+    FileOutputFormat.setOutputPath(job, new Path(args[0]));
+    System.exit(job.waitForCompletion(true) ? 0 : 1);
+  }
+\end{lstlisting}
+Nous pouvons voir ici que les classes OutPut ont été changés, la clé est devenu un \verb?IntWritable?, non plus un \verb?Text?, et les valeurs des \verb?Point2DWritable? et non plus des \verb?IntWritable?.
+
+Nous avons aussi ajouté la possibilité de configurer le mapping/reducing par les trois premières lignes, qui permettent de paramétrer les nombres d\newline e \verb?FakeInputSplit? généré et le nombre de points générés contenus dans ces "splits".
+
+\section{Exercice 4: Calcul de PI}
+Cet exercice doit nous entraîner à une utilisation de notre programme en nous faisant calculer une approximation de la valeur de PI par l'algorithme de Monte-Carlo géométrique.
+
+\paragraph{Explications} Quand nous générons des points aléatoires entre [0,0] et [1,1],la probabilité que ces points soient dans le quart de cercle (de centre [0,0]) est de $\pi$/4.
+
+\subsection{Le Mapper}
+\begin{lstlisting}
+public void map(IntWritable key, Point2DWritable value, Context context
+        ) throws IOException, InterruptedException {
+        double x = value.getPoint().getX();
+        double y = value.getPoint().getY();
+        if(x*x+y*y <= 1){
+            context.write(new Text("inside"), new IntWritable(1));
+        }
+    }
+\end{lstlisting}
+
+Le mapper est chargé de déterminer si le point qu'il reçoit est dans le quart de cercle, qui l'est si x*x+y*y est inférieure ou égale à 1. Si c'est le cas, il l'écrit dans le contexte et l'envoie au reducer.
+
+\subsection{Le Reducer}
+\begin{lstlisting}
+public void reduce(Text key, Iterable<IntWritable> values,
+                       Context context
+                       ) throws IOException, InterruptedException {
+        int split = Integer.parseInt(context.getConfiguration().get("splits"));
+        int points = Integer.parseInt(context.getConfiguration().get("points"));
+        double success = 0;
+        double drops = (split*points);
+        for(IntWritable value : values){
+            success += value.get();
+        }
+        context.write(new Text("PI"), new DoubleWritable(4*(success/drops)));
+    }
+\end{lstlisting}
+Sachant que l'on as $\pi$/4 chances d'avoir un point dans le quart de cercle, nous pouvons calculer notre ratio réel de points à l'intérieur. En multipliant ce ratio par 4, nous avons donc une approximation de $\pi$.
+
+\end{document}
