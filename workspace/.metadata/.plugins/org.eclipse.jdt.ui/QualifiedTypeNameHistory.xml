@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.DataInput"/>
+<fullyQualifiedTypeName name="java.io.DataOutput"/>
+<fullyQualifiedTypeName name="java.awt.geom.Point2D.Double"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.RecordReader"/>
+<fullyQualifiedTypeName name="Point2DWritable"/>
+<fullyQualifiedTypeName name="RandomPointInputFormat"/>
+<fullyQualifiedTypeName name="RandomPointReader"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.InputSplit"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="FakeInputSplit"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.mapred.FileInputFormat"/>
+<fullyQualifiedTypeName name="java.util.TreeSet"/>
+<fullyQualifiedTypeName name="java.util.TreeMap"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.DoubleWritable"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.LongWritable"/>
+<fullyQualifiedTypeName name="TP3.TP3Reducer"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.Writable"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.Text"/>
+<fullyQualifiedTypeName name="TaggedValue"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.BooleanWritable"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.IntWritable"/>
+<fullyQualifiedTypeName name="TP3.CityMapper"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.MultipleIOException"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.lib.input.MultipleInputs"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.lib.input.FileInputFormat"/>
+</qualifiedTypeNameHistroy>

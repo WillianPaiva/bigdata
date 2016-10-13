@@ -1,0 +1,265 @@
+2016-10-05 14:17:47,902 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: bigdata:tp3-mapreduce:0.0.1 @ /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/pom.xml.
+2016-10-05 14:18:02,953 [Worker-5] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /tp3-mapreduce/src/main/java
+2016-10-05 14:18:02,954 [Worker-5] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /tp3-mapreduce/src/test/java
+2016-10-05 14:18:03,319 [Worker-5] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 21 sec
+2016-10-05 14:18:05,004 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:18:05,020 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:18:05,021 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:18:05,023 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:18:41,878 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:18:41,882 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:18:41,884 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:18:41,886 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:18:58,413 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:18:58,415 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:18:58,416 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:18:58,417 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:20:01,339 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:20:01,341 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:20:01,342 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:20:01,343 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:22:02,803 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:22:02,805 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:22:02,806 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:22:02,807 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:23:02,453 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:23:02,455 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:23:02,456 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:23:02,458 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:24:27,627 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:24:27,629 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:24:27,631 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:24:27,632 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:25:00,764 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:25:00,766 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:25:00,768 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:25:00,770 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:26:38,439 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:26:38,441 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:26:38,442 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:26:38,443 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:27:04,048 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:27:04,049 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:27:04,050 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:27:04,051 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:28:14,296 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:28:14,298 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:28:14,300 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:28:14,301 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:33:11,619 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:33:11,620 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:33:11,621 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:33:11,622 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:35:03,013 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:35:03,015 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:35:03,016 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:35:03,017 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:35:28,700 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:35:28,702 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:35:28,703 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:35:28,703 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:38:18,122 [Worker-5] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/2.7.3/hadoop-mapreduce-client-core-2.7.3-sources.jar
+2016-10-05 14:38:18,352 [Worker-5] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/2.7.3/hadoop-mapreduce-client-core-2.7.3-sources.jar
+2016-10-05 14:38:18,391 [Worker-5] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.hadoop:hadoop-mapreduce-client-core:2.7.3
+2016-10-05 14:38:18,733 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:38:18,734 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:38:18,735 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:38:18,736 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:38:55,650 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:38:55,652 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:38:55,654 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:38:55,656 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:44:31,282 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:44:31,284 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:44:31,286 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:44:31,287 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:51:40,522 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:51:40,527 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:51:40,530 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:51:40,531 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 14:51:58,291 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:51:58,292 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 14:51:58,293 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 14:51:58,294 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 15:11:39,154 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:11:39,156 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 15:11:39,158 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:11:39,159 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 15:11:46,986 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:11:46,988 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 15:11:46,989 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:11:46,989 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 15:15:45,951 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:15:45,953 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 15:15:45,954 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:15:45,955 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 15:15:47,790 [Worker-23] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: bigdata:tp3-mapreduce:0.0.1 @ /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/pom.xml.
+2016-10-05 15:15:49,474 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:15:49,476 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 15:15:49,479 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:15:49,481 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 15:17:15,826 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:17:15,828 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 15:17:15,829 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:17:15,830 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 15:17:34,166 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:17:34,168 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 15:17:34,169 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:17:34,170 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 15:21:25,738 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:21:25,739 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 15:21:25,740 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:21:25,742 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 15:26:45,984 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:26:45,986 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 15:26:45,988 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:26:45,989 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 15:26:51,418 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:26:51,420 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 15:26:51,421 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:26:51,422 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-05 15:29:07,799 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:29:07,801 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-05 15:29:07,802 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-05 15:29:07,803 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-12 13:47:40,987 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: bigdata:tp3-mapreduce:0.0.1 @ /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/pom.xml.
+2016-10-12 13:47:51,895 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:47:51,898 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/main/resources
+2016-10-12 13:47:51,912 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:47:51,913 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1/src/test/resources
+2016-10-12 13:49:36,200 [Worker-17] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: bigdata:tp3-mapreduce:0.0.1 @ /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/pom.xml.
+2016-10-12 13:49:37,480 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /tp3-mapreduce/src/main/java
+2016-10-12 13:49:37,481 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /tp3-mapreduce/src/test/java
+2016-10-12 13:49:37,671 [Worker-17] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 2 sec
+2016-10-12 13:49:38,514 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:49:38,516 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 13:49:38,517 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:49:38,518 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 13:50:24,822 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:50:24,823 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 13:50:24,824 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:50:24,826 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 13:54:08,873 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:54:08,874 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 13:54:08,875 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:54:08,877 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 13:54:25,378 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:54:25,380 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 13:54:25,381 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:54:25,382 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 13:56:56,377 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:56:56,379 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 13:56:56,380 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:56:56,382 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 13:57:04,731 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:57:04,733 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 13:57:04,735 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:57:04,736 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 13:57:11,623 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:57:11,625 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 13:57:11,626 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:57:11,627 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 13:57:18,432 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:57:18,434 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 13:57:18,436 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:57:18,438 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 13:59:17,382 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:59:17,384 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 13:59:17,385 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:59:17,386 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 13:59:29,006 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:59:29,008 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 13:59:29,009 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 13:59:29,011 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 14:05:26,986 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:05:26,987 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 14:05:26,988 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:05:26,989 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 14:08:35,113 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:08:35,115 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 14:08:35,116 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:08:35,118 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 14:12:02,018 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:12:02,019 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 14:12:02,021 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:12:02,022 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 14:14:49,324 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:14:49,329 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 14:14:49,330 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:14:49,335 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 14:15:46,242 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:15:46,244 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 14:15:46,244 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:15:46,246 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 14:17:40,927 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:17:40,929 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 14:17:40,930 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:17:40,932 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 14:20:19,856 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:20:19,858 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 14:20:19,858 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:20:19,860 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 14:29:57,331 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:29:57,333 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 14:29:57,334 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:29:57,335 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 14:38:56,627 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:38:56,629 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/main/resources
+2016-10-12 14:38:56,630 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:38:56,631 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK/src/test/resources
+2016-10-12 14:41:41,862 [Worker-38] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: bigdata:tp3-mapreduce:0.0.1 @ /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/pom.xml.
+2016-10-12 14:41:43,416 [Worker-38] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /tp3-mapreduce/src/main/java
+2016-10-12 14:41:43,418 [Worker-38] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /tp3-mapreduce/src/test/java
+2016-10-12 14:41:43,519 [Worker-38] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 2 sec
+2016-10-12 14:41:44,642 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:41:44,644 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 14:41:44,645 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:41:44,646 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 14:46:15,778 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:46:15,780 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 14:46:15,781 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:46:15,782 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 14:46:24,783 [Worker-46] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:46:24,785 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 14:46:24,786 [Worker-46] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:46:24,787 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 14:46:56,750 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:46:56,752 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 14:46:56,753 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 14:46:56,754 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 15:04:34,683 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:04:34,685 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 15:04:34,686 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:04:34,688 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 15:07:28,552 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:07:28,554 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 15:07:28,554 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:07:28,556 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 15:08:25,738 [Worker-51] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:08:25,740 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 15:08:25,741 [Worker-51] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:08:25,742 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 15:12:21,004 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:12:21,006 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 15:12:21,007 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:12:21,009 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 15:17:32,661 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:17:32,663 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 15:17:32,664 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:17:32,665 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 15:17:39,225 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:17:39,227 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 15:17:39,227 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:17:39,229 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 15:21:52,715 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:21:52,717 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 15:21:52,719 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:21:52,720 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 15:22:03,287 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:22:03,289 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 15:22:03,290 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:22:03,291 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-12 15:29:06,169 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:29:06,172 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
+2016-10-12 15:29:06,175 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-12 15:29:06,177 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources

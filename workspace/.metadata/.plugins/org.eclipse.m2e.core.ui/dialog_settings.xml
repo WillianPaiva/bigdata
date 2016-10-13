@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="/autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin"/>
+			<item value="/autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK"/>
+			<item value="/net/cremi/wvervale/espaces/travail/bigdatatd5/bigdata/TP6topK"/>
+			<item value="/autofs/netapp/travail/wvervale/bigdatatd5/bigdata/tp5exo1"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>
