@@ -1,0 +1,156 @@
+% Created 2016-09-17 Sat 13:31
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage[hyperref,x11names]{xcolor}
+\usepackage[colorlinks=true,urlcolor=SteelBlue4,linkcolor=Firebrick4]{hyperref}
+% --------------INTEGRATION CODE JAVA----------
+\usepackage{listings}
+\lstset{
+language=Java,
+basicstyle=\normalsize, % ou ça==> basicstyle=\scriptsize,
+upquote=true,
+aboveskip={1.5\baselineskip},
+columns=fullflexible,
+showstringspaces=false,
+extendedchars=true,
+breaklines=true,
+showtabs=false,
+showspaces=false,
+showstringspaces=false,
+identifierstyle=\ttfamily,
+keywordstyle=\color[rgb]{0,0,1},
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+\author{Willian Ver Valen Paiva \and Alan Guitard}
+\date{\today}
+\title{Rapport TP6}
+\hypersetup{
+ pdfauthor={Willian Ver Valen Paiva Guitard Alan},
+ pdftitle={Création d'InputFormat personnalisé},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.1.50.1 (Org mode 8.3.5)}, 
+ pdflang={fr}
+ }
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+\section{Introduction}
+L’objectif de ce travail consiste à utiliser et maîtriser les méthodes «setup» et
+«cleanup» qui sont impliquées	par l’exercice proposé.
+La méthode «setup» est celle qui est appelée avant le «mapper» et où on initialise les
+objets qui vont être utilisés dans tous les	«mappers».
+La méthode «cleanup» est celle qui est appelée après le «mapper».
+\section{Exercice 1}
+Pour faire cet exercice nous avons initialisé deux variables dans la méthode Setup; une
+qui	s’appelle ktown et l’autre : topk dans lesquelles ktown est une TreeMap et topk dont
+la valeur est passée en paramètre par la ligne de commandes.
+
+\begin{lstlisting}
+    protected void setup(Context context)
+    {
+      ktown = new TreeMap<Long,String>();
+      topk = context.getConfiguration().getInt("topk", 1);
+    }
+\end{lstlisting}
+\paragraph{map}
+Dans	la	liste	 ktown,	 nous	entrons	les	valeurs	des	villes	et	populations	grâce	à	la	méthode
+add	 où	la	taille	de	la	liste	est	définie	par	la	valeur	de	topk	.	 Lorsque	nous	appelons	cette
+méthode,	elle	regarde	si	la	liste	est	déjà	remplie.	Si	 non,	 elle	ajoute	la	nouvelle	valeur	à	la
+liste.	 Si	 elle	 est	 déjà	 remplie,	 elle	 recherche	 la	 plus	 petite	 valeur	 existante	 dans	 la	 liste	 et
+la remplace	par	la	valeur	que	nous	voulons	ajouter,	si	cette	dernière	est	plus	grande.
+
+\begin{lstlisting}
+    private void add(long a,String town)
+    {
+      if(ktown.size() < topk)
+      {
+        ktown.put(a,town);
+      }
+      else
+      {
+        long first = ktown.firstKey();
+        if(first < a)
+        {
+          ktown.remove(first);
+          ktown.put(a, town);
+        }
+      }
+    }
+\end{lstlisting}
+
+Puis,	dans la	méthode	 map,	 on	appelle	la	méthode	 add	 avec	toutes	les	villes.
+\begin{lstlisting}
+    public void map(Object key, Text value, Context context
+        ) throws IOException, InterruptedException {
+
+      String[] line = value.toString().split(",");
+
+      if(!line[4].equals("Population"))
+      {
+        if(!line[4].equals(""))
+        {
+          String name = line[2];
+          this.add(Long.parseLong(line[4]), name);
+        }
+      }
+    }
+\end{lstlisting}
+Ensuite, dans	 la	 méthode	 cleanup,	 on	 écrit	 toutes	 les	 valeurs	 de	 la	 liste	 ktown	dans	 le
+contexte.
+
+\begin{lstlisting}
+    protected  void cleanup(Context context) throws IOException, InterruptedException
+    {
+      for(long d : ktown.keySet())
+      {
+        context.write(new Text(ktown.get(d)), new LongWritable(d));
+      }
+    }
+\end{lstlisting}
+
+\paragraph{reducer}
+Les	 méthodes	 setup	 et	 cleaner	 	 du	 reducer	 sont	 exactement	 les	 mêmes	 que	 celles	 du
+mapper.	Et	dans	le	 reducer	 on	appelle	 add	 pour	toutes	les	valeurs	reçues.
+
+\begin{lstlisting}
+    public void reduce(Text key, Iterable<LongWritable> values,
+        Context context
+        ) throws IOException, InterruptedException {
+      for(LongWritable v : values)
+      {
+        this.add(v.get(),key.toString());
+      }
+    }
+\end{lstlisting}
+
+\section{Exercice 2}
+Il s’agit là d’ajouter la classe reducer en tant que combiner au job.
+\begin{lstlisting}
+    job.setCombinerClass(TP3Reducer.class);
+\end{lstlisting}
+
+
+
+\section{Exercice 3}
+Les tests effectués ont tous été passés avec succès.
+
+
+\end{document}
