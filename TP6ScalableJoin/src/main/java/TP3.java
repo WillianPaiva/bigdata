@@ -16,30 +16,28 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class TP3 {
 
-	
-
-	public static class CityMapper extends Mapper<Object, Text, Text, TaggedValue>{
+	public static class CityMapper extends Mapper<Object, Text, TaggedKey, TaggedValue>{
 
 		public void map(Object key, Text value, Context context
 				) throws IOException, InterruptedException {
 			TaggedValue t = new TaggedValue(value, new BooleanWritable(true));
-			context.write(new Text(t.getCode()),t);
+			context.write(new TaggedKey(t.getCode(),true),t);
 		}
 	}
 	
-	public static class RegionMapper extends Mapper<Object, Text, Text, TaggedValue>{
+	public static class RegionMapper extends Mapper<Object, Text, TaggedKey, TaggedValue>{
 
 		public void map(Object key, Text value, Context context
 				) throws IOException, InterruptedException {
 			TaggedValue t = new TaggedValue(value, new BooleanWritable(false));
-			context.write(new Text(t.getCode()),t);
+			context.write(new TaggedKey(t.getCode(),false),t);
 			
 		}
 	}
 
-	public static class TP3Reducer extends Reducer<Text,TaggedValue,Text,Text> {
+	public static class TP3Reducer extends Reducer<TaggedKey,TaggedValue,Text,Text> {
 		
-		public void reduce(Text key, Iterable<TaggedValue> values,
+		public void reduce(TaggedKey key, Iterable<TaggedValue> values,
 				Context context
 				) throws IOException, InterruptedException {
 			
@@ -80,11 +78,10 @@ public class TP3 {
 				TextInputFormat.class,
 				RegionMapper.class);
 				
-		job.setNumReduceTasks(1);
+		job.setNumReduceTasks(2);
 		job.setJarByClass(TP3.class);
-		//job.setMapperClass(CityMapper.class);
 		
-		job.setMapOutputKeyClass(Text.class);
+		job.setMapOutputKeyClass(TaggedKey.class);
 		job.setMapOutputValueClass(TaggedValue.class);
 		job.setReducerClass(TP3Reducer.class);
 		
@@ -92,7 +89,7 @@ public class TP3 {
 		job.setOutputValueClass(Text.class);
 		job.setOutputFormatClass(TextOutputFormat.class);
 		//job.setInputFormatClass(TextInputFormat.class);
-		
+		job.setPartitionerClass(TaggedPartitionner.class);
 		FileOutputFormat.setOutputPath(job, new Path(args[2]));
 		System.exit(job.waitForCompletion(true) ? 0 : 1);
 	}
