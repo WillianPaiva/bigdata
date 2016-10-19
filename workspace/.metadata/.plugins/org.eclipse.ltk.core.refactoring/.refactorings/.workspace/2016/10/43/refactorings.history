@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;tp3-mapreduce&apos;" deleteContents="false" description="Delete resource &apos;tp3-mapreduce&apos;" element1="/tp3-mapreduce" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1476887835330"/>&#x0A;<refactoring comment="Delete resource &apos;RemoteSystemsTempFiles&apos;" deleteContents="false" description="Delete resource &apos;RemoteSystemsTempFiles&apos;" element1="/RemoteSystemsTempFiles" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1476887843226"/>
+</session>

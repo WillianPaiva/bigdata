@@ -263,3 +263,43 @@
 2016-10-12 15:29:06,172 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/main/resources
 2016-10-12 15:29:06,175 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2016-10-12 15:29:06,177 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin/src/test/resources
+2016-10-19 16:37:04,519 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-10-19 16:37:51,294 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: bigdata:tp3-mapreduce:0.0.1 @ /home/willian/Documents/bigdata/TP6ScalableJoin/pom.xml.
+2016-10-19 16:37:51,973 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /tp3-mapreduce/src/main/java
+2016-10-19 16:37:51,973 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /tp3-mapreduce/src/test/java
+2016-10-19 16:37:52,040 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 1 sec
+2016-10-19 16:37:53,063 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:37:53,064 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/main/resources
+2016-10-19 16:37:53,066 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:37:53,067 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/test/resources
+2016-10-19 16:38:54,151 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:38:54,151 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/main/resources
+2016-10-19 16:38:54,153 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:38:54,153 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/test/resources
+2016-10-19 16:39:12,239 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-common/2.7.3/hadoop-common-2.7.3-sources.jar
+2016-10-19 16:39:12,973 [Worker-14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-common/2.7.3/hadoop-common-2.7.3-sources.jar
+2016-10-19 16:39:13,011 [Worker-14] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.hadoop:hadoop-common:2.7.3
+2016-10-19 16:39:13,214 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:39:13,215 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/main/resources
+2016-10-19 16:39:13,217 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:39:13,217 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/test/resources
+2016-10-19 16:39:30,400 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:39:30,401 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/main/resources
+2016-10-19 16:39:30,402 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:39:30,402 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/test/resources
+2016-10-19 16:40:17,454 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:40:17,455 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/main/resources
+2016-10-19 16:40:17,456 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:40:17,456 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/test/resources
+2016-10-19 16:52:58,716 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:52:58,716 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/main/resources
+2016-10-19 16:52:58,717 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:52:58,717 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/test/resources
+2016-10-19 16:54:45,193 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:54:45,194 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/main/resources
+2016-10-19 16:54:45,195 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:54:45,195 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/test/resources
+2016-10-19 16:59:08,422 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:59:08,423 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/main/resources
+2016-10-19 16:59:08,424 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-10-19 16:59:08,424 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/willian/Documents/bigdata/TP6ScalableJoin/src/test/resources

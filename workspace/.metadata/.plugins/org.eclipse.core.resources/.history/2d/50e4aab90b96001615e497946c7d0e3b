@@ -1,0 +1,5 @@
+import org.apache.hadoop.io.WritableComparator;
+
+public class TaggedComparator extends  WritableComparator {
+
+}

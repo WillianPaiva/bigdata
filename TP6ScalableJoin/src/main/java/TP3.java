@@ -88,6 +88,8 @@ public class TP3 {
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(Text.class);
 		job.setOutputFormatClass(TextOutputFormat.class);
+		job.setCombinerKeyGroupingComparatorClass(TaggedComparator.class);
+		job.setSortComparatorClass(TaggedComparator.class);
 		//job.setInputFormatClass(TextInputFormat.class);
 		job.setPartitionerClass(TaggedPartitionner.class);
 		FileOutputFormat.setOutputPath(job, new Path(args[2]));
