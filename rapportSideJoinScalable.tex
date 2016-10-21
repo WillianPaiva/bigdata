@@ -1,0 +1,120 @@
+% Created 2016-09-17 Sat 13:31
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage[hyperref,x11names]{xcolor}
+\usepackage[colorlinks=true,urlcolor=SteelBlue4,linkcolor=Firebrick4]{hyperref}
+% --------------INTEGRATION CODE JAVA----------
+\usepackage{listings}
+\lstset{
+language=Java,
+basicstyle=\normalsize, % ou ça==> basicstyle=\scriptsize,
+upquote=true,
+aboveskip={1.5\baselineskip},
+columns=fullflexible,
+showstringspaces=false,
+extendedchars=true,
+breaklines=true,
+showtabs=false,
+showspaces=false,
+showstringspaces=false,
+identifierstyle=\ttfamily,
+keywordstyle=\color[rgb]{0,0,1},
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+\author{Willian Ver Valen Paiva \and Alan Guitard}
+\date{\today}
+\title{Rapport TP6}
+\hypersetup{
+ pdfauthor={Willian Ver Valen Paiva Guitard Alan},
+ pdftitle={Création d'InputFormat personnalisé},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.1.50.1 (Org mode 8.3.5)}, 
+ pdflang={fr}
+ }
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{PARTIE 1: Reduce-side join}
+
+\subsection{Introduction}
+Cette première partie consistera à implémenter un \textit{inner join} dans le \textit{reducer}, c'est-à-dire de conserver seulement les deux élements qui sont présents dans les deux fichiers qu'on lui donnera en paramètre. En l'occurrence, nous aurons deux fichiers: un qui contient les noms de villes que l'on as traités dans les anciens exercices et un deuxième qui contient des régions avec leur code.
+
+\subsection{TaggedValue}
+
+La première partie de cet exercice consiste à coder une structure de donnée, qui implémentera \verb?Writable? afin de récupérer chaque ligne lue en stockant dans cette objet l'information si cette ligne provient d'un fichier ou de l'autre, si c'est une ville ou une région.\\Dans cet objet \verb?TaggedValue?, nous aurons donc la ligne format \verb?org.apache.hadoop.io.Text? et un boolean qui vaut true si la ligne provient du fichier de ville, false sinon. 
+Nous avons du implémenter aussi dans cet objet des fonction des traitement de ces données. La fonction de comparaison entre deux \verb?TaggedValue? doit vérifier si celle passer en paramètre est une région, si l'objet appelant (this) est une ville, et si la ville vient de la région en question.Si c'est le cas, elle renvoie vrai.
+
+\subsection{Les Mappers}
+Dans le cas de cet exercice, deux \textit{mappers} seront utiles. L'un pour les villes, \verb?CityMapper?, et l'autre pour les régions, \verb?RegionMapper?.
+
+Voici l'exemple du mapper des villes:
+\begin{lstlisting}
+public static class CityMapper extends Mapper<Object, Text, Text, TaggedValue>{
+
+		public void map(Object key, Text value, Context context
+				) throws IOException, InterruptedException {
+			TaggedValue t = new TaggedValue(value, new BooleanWritable(true));
+			context.write(new Text(t.getCode()),t);
+		}
+	}
+\end{lstlisting}
+Ce \textit{mapper} est le même que celui de la région, mis à part la valeur booléenne qui devient false.
+	
+\subsection{Le Reducer}
+Le reducer a deux actions qui justifie le nom de cette partie: \textit{side} et \textit{join}. \textit{Side}, ou séparation, divise les \verb?TaggedValue? en deux listes de \verb?String?. Il est très important de ne pas faire des listes de \verb?TaggedValue? car Hadoop gère l'itération de ces objets en gardant en mémoire toujours la même référence, mais en mettant les valeurs à lire à l'intérieur. Diviser en listes de \verb?TaggedValue? aura pour effet d'avoir les mêmes valeurs dans toutes les cases.\\La deuxième et dernière action, \textit{join}, lit ces listes et écrit dans le contexte la région en clé et la ville en valeur.
+
+\section{PARTIE 2: Scalable join}
+
+\subsection{Introduction}
+Cette partie nous invite à régler un des problèmes d'optimisation que la partie 1 amène. En effet, nous pouvons remarquer qu'avec cet implémentation, dans le pire des cas, toutes les valeurs pour une clé doivent être lues en mémoire avant de pouvoir effectuer le \textit{join}.Cette solution pose des problèmes évidents dans le cas où le nombre de valeurs devient important. Il faut donc faire en sorte que les valeurs arrivent déjà triées dans le \textit{reducer}. De cette manière, toutes les valeurs du premier dataset sont avant celles du second dataset et seules les premières valeurs doivent être lues en mémoire.
+
+\subsection{TaggedKey}
+Nous devons implémenter une classe implémentant \verb?WritableComparator? afin de l'utiliser en tant que clé, \verb?TaggedKey?. Cette classe contiendra le code de la région ou de la ville et un boolean permettant de savoir si c'est une ville ou une région. Elle implémentera la fonction \verb?compareTo(TaggedKey o);? qui n'aura d'action qu'appeler cette sur le code région sous format \verb?Text? qui possède aussi cette fonction.
+
+\subsection{Partitionner}
+Comme nous avons changer la clé, le \textit{partitionner} par défaut d'hadoop ne renvoie plus les résultats voulus car nous ne voulons partitionner qu'en fonction du code région contenue dans \verb?TaggedKey?. Voici l'objet qui étends l'objet \verb?Partitioner<TaggedKey,TaggedValue>?:
+
+\begin{lstlisting}
+public class TaggedPartitionner extends Partitioner<TaggedKey, TaggedValue>{
+
+	@Override
+	public int getPartition(TaggedKey key, TaggedValue value, int numPartitions) {
+		// TODO Auto-generated method stub
+		if(numPartitions == 0)
+			return 0;
+		
+		int alpha = key.getKey().toString().toLowerCase().charAt(0) - 96;
+		
+		return alpha % numPartitions;
+	}
+
+}
+\end{lstlisting}
+
+Nous déclarons à Hadoop qu'il doit utiliser ce \verb?partitionner? par le job par l'instruction \verb?job.setPartitionerClass(TaggedPartitionner.class);?. Cet objet, donc, recherche la place de première lettre de la clé dans l'alphabet etla module avec le nombre de partitions donné en paramètre. De ce fait, les valeurs seront séparés en partitions en fonction de cette clé.
+
+\subsection{Grouping & sort}
+
+
+
+\end{document}
+
