@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/home/willian/Documents/bigdata/TP6ScalableJoin"/>
 			<item value="/autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6RedSideJoin"/>
 			<item value="/autofs/netapp/travail/wvervale/bigdatatd5/bigdata/TP6topK"/>
 			<item value="/net/cremi/wvervale/espaces/travail/bigdatatd5/bigdata/TP6topK"/>

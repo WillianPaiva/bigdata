@@ -1,0 +1,98 @@
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.BooleanWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+
+public class TP3 {
+
+	public static class CityMapper extends Mapper<Object, Text, TaggedKey, TaggedValue>{
+
+		public void map(Object key, Text value, Context context
+				) throws IOException, InterruptedException {
+			TaggedValue t = new TaggedValue(value, new BooleanWritable(true));
+			context.write(new TaggedKey(t.getCode(),true),t);
+		}
+	}
+	
+	public static class RegionMapper extends Mapper<Object, Text, TaggedKey, TaggedValue>{
+
+		public void map(Object key, Text value, Context context
+				) throws IOException, InterruptedException {
+			TaggedValue t = new TaggedValue(value, new BooleanWritable(false));
+			context.write(new TaggedKey(t.getCode(),false),t);
+			
+		}
+	}
+
+	public static class TP3Reducer extends Reducer<TaggedKey,TaggedValue,Text,Text> {
+		
+		public void reduce(TaggedKey key, Iterable<TaggedValue> values,
+				Context context
+				) throws IOException, InterruptedException {
+			
+			List<String> listC = new ArrayList<String>();
+			List<String> listR = new ArrayList<String>();
+			
+			//Side
+			for(TaggedValue v : values)
+			{
+				if(v.isCity().get())
+					listC.add(v.toString());
+				else
+					listR.add(v.toString());
+			}
+			
+			//Join
+			if(!listC.isEmpty() && !listR.isEmpty())
+			{
+				for(String r : listR)
+					for(String c : listC)
+						context.write(new Text(r),new Text(c));
+			}
+		}
+	}
+	
+	public static void main(String[] args) throws Exception {
+		Configuration conf = new Configuration();
+		
+		Job job = Job.getInstance(conf, "TP3");
+		// Cities text
+		MultipleInputs.addInputPath(job, 
+				new Path(args[0]), 
+				TextInputFormat.class,
+				CityMapper.class);
+		//Region text
+		MultipleInputs.addInputPath(job, 
+				new Path(args[1]), 
+				TextInputFormat.class,
+				RegionMapper.class);
+				
+		job.setNumReduceTasks(2);
+		job.setJarByClass(TP3.class);
+		
+		job.setMapOutputKeyClass(TaggedKey.class);
+		job.setMapOutputValueClass(TaggedValue.class);
+		job.setReducerClass(TP3Reducer.class);
+		
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(Text.class);
+		job.setOutputFormatClass(TextOutputFormat.class);
+		job.setCombinerKeyGroupingComparatorClass(TaggedGroupComparator.class);
+		job.setSortComparatorClass(TaggedGroupComparator.class);
+		//job.setInputFormatClass(TextInputFormat.class);
+		job.setPartitionerClass(TaggedPartitionner.class);
+		FileOutputFormat.setOutputPath(job, new Path(args[2]));
+		System.exit(job.waitForCompletion(true) ? 0 : 1);
+	}
+}

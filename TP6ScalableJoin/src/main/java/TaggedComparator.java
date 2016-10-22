@@ -12,7 +12,6 @@ public int compare(WritableComparable w1, WritableComparable w2) {
     TaggedKey k1 = (TaggedKey)w1;
     TaggedKey k2 = (TaggedKey)w2;
 
-     
     return k1.compareTo(k2);
 }			
 }

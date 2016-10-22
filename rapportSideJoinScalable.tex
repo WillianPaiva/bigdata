@@ -114,7 +114,31 @@ Nous déclarons à Hadoop qu'il doit utiliser ce \verb?partitionner? par le job 
 
 \subsection{Grouping & sort}
 
+for this exercice we where supposed to declare a new comparator class to use for
+the sorting and grouping ;
+as during the development of the \textit{TaggedKey} we used just hadoop writeble
+objects the \textit{ compareTo } function of \textit{TaggedKey} consisted of just
+returning the \textit{compareTo} of the text objects.
 
+the grouping comparator consists in just returning the result of this comparison;
+
+but for the sorted  we compare the isCity boolean to send the regions first;
+
+
+\begin{lstlisting}
+@Override
+public int compare(WritableComparable w1, WritableComparable w2) {
+    TaggedKey k1 = (TaggedKey)w1;
+    TaggedKey k2 = (TaggedKey)w2;
+      if(k1.isCity().get() && k2.isCity().get()){
+          return 0;
+      }else if(k1.isCity().get()){
+      return -1;
+      }
+
+      return 1;
+}
+\end{lstlisting}
 
 \end{document}
 

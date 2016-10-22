@@ -27,4 +27,6 @@
 <fullyQualifiedTypeName name="org.apache.hadoop.io.MultipleIOException"/>
 <fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.lib.input.MultipleInputs"/>
 <fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.lib.input.FileInputFormat"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.WritableComparator"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.WritableComparable"/>
 </qualifiedTypeNameHistroy>
