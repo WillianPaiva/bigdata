@@ -112,7 +112,7 @@ public class TaggedPartitionner extends Partitioner<TaggedKey, TaggedValue>{
 
 Nous déclarons à Hadoop qu'il doit utiliser ce \verb?partitionner? par le job par l'instruction \verb?job.setPartitionerClass(TaggedPartitionner.class);?. Cet objet, donc, recherche la place de première lettre de la clé dans l'alphabet etla module avec le nombre de partitions donné en paramètre. De ce fait, les valeurs seront séparés en partitions en fonction de cette clé.
 
-\subsection{Grouping & sort}
+
 
 for this exercice we where supposed to declare a new comparator class to use for
 the sorting and grouping ;
