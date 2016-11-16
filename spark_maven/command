@@ -1,0 +1,3 @@
+mvn package
+
+spark-submit --master yarn-cluster --num-executors 10 --class bigdata.TPSpark target/TPSpark-0.0.1.jar /user/raw_data/worldcitiespop.txt
