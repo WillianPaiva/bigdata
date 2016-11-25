@@ -18,7 +18,6 @@ public class TPSpark {
 		//System.out.println(args.);
 		
 		String filePath = args[0];
-		String regionFile = args[1];
 		SparkConf conf = new SparkConf().setAppName("TP Spark");
 		JavaSparkContext context = new JavaSparkContext(conf);
 		
@@ -61,37 +60,15 @@ public class TPSpark {
 		/**
 		 * Exercice 4
 		 */
-		
-		JavaPairRDD<Integer,Double> histo1 = doubledRDD.mapToPair(x -> {
+		/*JavaPairRDD<Integer,Double> histo1 = doubledRDD.mapToPair(x -> {
 			int log_pop10 = (int)Math.pow(10,(int) Math.round(Math.log10(x)));
 			return new Tuple2<Integer,Double>(log_pop10,x);
 		});
-		JavaPairRDD<Integer,StatCounter> histoFinal = histo1.aggregateByKey(new StatCounter(), (c,d) -> c.merge(d), (c1,d2) -> c1.merge(d2));
 		
-		/**
-		 * Exercice 5
-		 */
+		JavaPairRDD<Integer,Iterable<Double>> histo2 = histo1.groupByKey();
 		
-		JavaRDD<String> rddToJoin = context.textFile(regionFile, Integer.parseInt(conf.get("spark.executor.instances")));
+		JavaRDD<StatCounter> histoFinal = histo2.map( x -> context.parallelize((List<Double>) x._2).mapToDouble(y -> y).stats());
 		
-		JavaPairRDD<String, String> citiesMap = rddToMap.mapToPair(x -> { 
-			String[] y = {};
-			if(!x.split(",")[4].equals("Population"))
-			{
-				if(!x.split(",")[4].equals(""))
-					y = x.split(",");
-				return new Tuple2<String,String>( (y[0]+y[3]).toUpperCase() ,x);
-			}
-			return new Tuple2<String,String>("",x);
-		});
-		
-		JavaPairRDD<String, String> regionMap = rddToJoin.mapToPair(x -> { 
-			String[] y = {};
-			if(!x.split(",")[4].equals(""))
-				y = x.split(",");
-			return new Tuple2<String,String>( (y[0]+y[1]).toUpperCase() ,x);
-		});
-		
-		JavaPairRDD<String, Tuple2<String,String>> joinedMap = citiesMap.join(regionMap);
+		histoFinal.collect().forEach(System.out::println);*/
 	}
 }
